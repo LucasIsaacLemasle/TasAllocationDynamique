@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "affiche_tas.h"
 #include <string.h>
+//#include <CUnit.h>
 
 
 
@@ -140,9 +141,13 @@ char* tas_malloc_fct(unsigned int taille, char* (pt_fct)(unsigned int))
 
 void tas_free(char* ptr)
 {
-    *ptr = -1;
+    *ptr = -1; // le pointeur pointe sur le début du bloc, juste après sa taille
 }
 
+int get_block_size(char* ptr)
+{
+    return *(ptr-1);
+}
 
 int main()
 {
@@ -155,7 +160,7 @@ int main()
     char* (*pt_fct_worst)(unsigned int) = &worst_fit;
 
 
-/* TEST */
+/* Premier Essai */
 //    afficher_tas();
 //
 //    char* ptr1 = (char*)tas_malloc(10);
@@ -210,5 +215,13 @@ int main()
     p4 = (char *) tas_malloc_fct(8,pt_fct_best);
     strcpy( p4, "systeme" );
     afficher_tas();
+
+
+
+///* TEST */
+//    CU_ASSERT(get_block_size(p1) == 10);
+//    CU_ASSERT(get_block_size(p4) == 9);
+//    CU_ASSERT(get_block_size(p3) == 5);
+
     return 0;
 }
