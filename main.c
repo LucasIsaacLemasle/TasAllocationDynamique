@@ -90,6 +90,7 @@ char* worst_fit(unsigned int taille)
 char* tas_malloc_fct(unsigned int taille, char* (pt_fct)(unsigned int))
 {
 
+    // recuperation de l'adresse via le pointeur de fonction selon la strategie choisie
     char* pos_allo = (*pt_fct)(taille);
     if(pos_allo == (tas + TAILTAS -1))// vérifie qu'il y a toujours de l'espace dans le tas
     {
@@ -126,7 +127,6 @@ int main()
 {
     // initialisation du tas
     tas_init();
-//    int pred = tas;
 
 /* Pointeurs des fonctions best-fits, worst-fits, first-fits */
     char* (*pt_fct_best)(unsigned int) = &best_fit;
@@ -153,7 +153,7 @@ int main()
     p4 = (char *) tas_malloc_fct(8,pt_fct_best);
     strcpy( p4, "systeme" );
 
-
+// Affichage du tas
     afficher_tas();
 
 
