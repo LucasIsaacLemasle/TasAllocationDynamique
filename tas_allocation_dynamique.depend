@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1680686242 source:c:\users\lucas\onedrive\bureau\documents\poei\tas_allocation_dynamique\affiche_tas.c
+	<stdio.h>
+	"affiche_tas.h"
+	<ctype.h>
+
+1680514633 c:\users\lucas\onedrive\bureau\documents\poei\tas_allocation_dynamique\affiche_tas.h
+
+1680686220 source:c:\users\lucas\onedrive\bureau\documents\poei\tas_allocation_dynamique\main.c
+	<stdio.h>
+	<stdlib.h>
+	"affiche_tas.h"
+	<string.h>
+
