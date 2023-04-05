@@ -2,8 +2,11 @@
 #include <stdlib.h>
 #include "affiche_tas.h"
 #include <string.h>
-//#include <CUnit.h>
 
+#include <sys/stat.h>
+
+#include <CUnit/CUnit.h>
+#include <CUnit/Basic.h>
 
 
 #define buffer_dans_tas(ptr)         ptr<(tas+TAILTAS-1)
